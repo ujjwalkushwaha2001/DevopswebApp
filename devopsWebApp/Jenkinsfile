@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image') {
             steps {  
                 script {
-                    dir('dockerApp') {
+                    dir('devopsWebApp') {
                         sh 'docker build -t reetikasingh123/devops:$BUILD_NUMBER .'
                     }
                 } 
