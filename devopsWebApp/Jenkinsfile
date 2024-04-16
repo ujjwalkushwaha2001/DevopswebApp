@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-            git url: 'https://github.com/ReetikaSingh123/devopsWebApp.git', branch: 'main'
+            git url: 'https://github.com/ujjwalkushwaha2001/DevopswebApp.git', branch: 'main'
             }
         }
  
@@ -14,7 +14,7 @@ pipeline {
             steps {  
                 script {
                     dir('devopsWebApp') {
-                        sh 'docker build -t reetikasingh123/devops:$BUILD_NUMBER .'
+                        sh 'docker build -t ujjwalkushwaha2001/devops:$BUILD_NUMBER .'
                     }
                 } 
             }
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push reetikasingh123/devops:$BUILD_NUMBER'
+                sh 'docker push ujjwalkushwaha2001/devops:$BUILD_NUMBER'
             }
         }
 }
